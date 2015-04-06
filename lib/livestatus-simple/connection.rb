@@ -14,7 +14,7 @@ module LivestatusSimple
     end
 
     def handler
-      case @config[:uri]
+      case @config[:uri].to_s
         when /^tcp:\/\//
           TCPHandler.new(self, @config)
         when /^unix:\/\//
